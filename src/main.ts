@@ -13,11 +13,11 @@ async function bootstrap() {
     credentials: true,
   });
 
-  await app.listen(process.env.PORT ?? 3000);
+  const port = process.env.PORT || 3000;
 
-  console.log(
-    `🚀 Backend running on http://localhost:${process.env.PORT ?? 3000}`,
-  );
+  await app.listen(port);
+
+  console.log(`🚀 AI Property Assistant Backend is running on port ${port}`);
 }
 
 bootstrap();
